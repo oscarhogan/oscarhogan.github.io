@@ -6,48 +6,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
   body {
-     font-family: "Courier New", Courier, monospace;
-     background-color: #f4f7e1;
-     margin: 0;
-     padding-left: 200px;
-     padding-right: 200px;
-     padding-top: 100px;
-  }
+  font-family: "Courier New", Courier, monospace;
+  background: #f4f7e1;
+  margin: 0;
+  padding: 100px 200px 0 200px;
+}
 
-  h1 {
-     font-size: 3rem;   
-     color: #02330C;
-  }
+h1 { font-size: 3rem; color: #02330C; }
+h2 { font-size: 1.5rem; color: #02330C; }
+h3 { font-size: 1rem; color: #02330C; }
+p  { font-size: 0.75rem; color: #02330C; }
 
-  h2 {
-    font-size: 1.5rem;
-    color: #02330C;
-  }
+/* Banner at top */
+.banner {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  margin-top: 20px;
+}
 
-  h3 {
-    font-size: 1rem;
-    color: #02330C;
-  }
+.banner img {
+  height: 200px;
+  max-width: 450px;
+  object-fit: cover;
+}
 
-  p {
-    font-size: 0.75rem;
-    color: #02330C;
-  }
+/* Projects row */
+.project-row {
+  display: flex;
+  gap: 40px;
+  margin-top: 50px;
+}
 
-  .banner {
-    display: flex;              
-    gap: 20px;                  
-    margin-top: 20px;           
-    overflow-x: auto;           
-    align-items: center;
-  }
+/* Individual project clickable */
+.project {
+  display: flex;           /* image + caption */
+  gap: 20px;
+  flex: 1 1 45%;           /* about half width each */
+  text-decoration: none;   /* remove link underline */
+  color: inherit;          /* keep text color */
+}
 
-  .banner img {
-    height: 200px;              
-    width: auto;                
-    max-width: 450px;           
-    object-fit: cover;               
-  }
+.project img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.project-caption h3 { margin: 0 0 5px 0; font-size: 1.2rem; }
+.project-caption p { margin: 0; font-size: 0.9rem; }
 </style>
 </head>
 <body>
@@ -64,5 +72,33 @@
   </div>
 
   <h3>Transport Systems and Sustainability</h3>
+
+  <div class="project-row">
+
+  <!-- Project 1 -->
+  <div class="project">
+    <a href="https://example.com/project1" target="_blank">
+      <img src="Cycling.JPG" alt="Project 1">
+    </a>
+    <div class="project-caption">
+      <h3>Equitable Cycleway Planning</h3>
+      <p>Using Network Analysis and Multi-Criteria Analysis to inform active-travel infrastructure allignment</p>
+    </div>
+  </div>
+
+  <!-- Project 2 -->
+  <div class="project">
+    <a href="https://example.com/project2" target="_blank">
+      <img src="Green.jpg" alt="Project 2">
+    </a>
+    <div class="project-caption">
+      <h3>Edinburgh Green Space</h3>
+      <p>A look into the way Greenspace avaliability and quality influences mental health related outcomes.</p>
+    </div>
+  </div>
+
+</div>
+
+
 </body>
 </html>
