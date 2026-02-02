@@ -1,31 +1,26 @@
-from numpy import rint
 import pandas as pd
 import geopandas as gpd
 import matplotlib.pyplot as plt
 import os
 import geopandas as gpd
 
+Southwark = pd.read_csv("data/LightLoc.csv")
+Lewisham = gpd.read_file("data/Lewisham.shp")
+Lambeth = gpd.read_file("data/Street_Lighting.shp")
 
-gdf = gpd.read_file("data/areabounds.shp")
-popden = pd.read_csv("data/PopDenNomis.csv")
-Southwarklightloc = pd.read_csv("data/LightLoc.csv")
-Lewishamlightloc = gpd.read_file("data/Lewisham.shp")
-Lambethlightloc = gpd.read_file("data/Street_Lighting.shp")
-
-gdf = gdf.to_crs("EPSG:4326")
-
-popden = pd.read_csv("data/PopDenNomis.csv")
-merged = gdf.merge(popden, left_on="OA21CD", right_on="2021 output area")
-
-lightlocgdf = gpd.GeoDataFrame(Southwarklightloc, geometry=gpd.points_from_xy(Southwarklightloc.easting, Southwarklightloc.northing))
+lightlocgdf = gpd.GeoDataFrame(Southwark, geometry=gpd.points_from_xy(Southwark.easting, Southwark.northing))
 Southwark = lightlocgdf.set_crs("EPSG:27700")
 Southwark = Southwark.to_crs("EPSG:4326")
 
-Lewisham = Lewishamlightloc.set_crs("EPSG:4326")
-Lambeth = Lambethlightloc.to_crs("EPSG:4326")
+Lewisham = Lewisham.set_crs("EPSG:27700",allow_override=True)
+Lewisham = Lewisham.to_crs("EPSG:4326")
 
-print(Lewisham.geometry.head(5))
-print(Lambeth.geometry.head(5))
-print(Southwark.geometry.head(5))
+Lambeth = Lambeth.to_crs("EPSG:4326")
 
-#Lewisham is fucked will fix tomoz
+AllBoro = gpd.GeoDataFrame(pd.concat([Southwark, Lewisham, Lambeth], ignore_index=True))
+
+AllBoro = AllBoro.to_crs("EPSG:4326")
+
+AllBoro.to_file("data/AllBoroLights.shp")
+
+#Output shape file containing street lights from all three boroughs
