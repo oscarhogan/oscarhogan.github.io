@@ -3,12 +3,12 @@ import geopandas as gpd
 import mapclassify
 
 #Core data
-gdf = gpd.read_file("data/AreaWithLightDensity.shp")
+gdf = gpd.read_file("data/AreaWithLightDensity.geojson")
 gdf = gdf.to_crs("EPSG:4326")
 
 #Additional aesthetic context
-outline = gpd.read_file("data/AreaOutline.shp")
-borolabel = gpd.read_file("data/AreaLabels.shp")
+outline = gpd.read_file("data/AreaOutline.geojson")
+borolabel = gpd.read_file("data/AreaLabels.geojson")
 
 # Defining bins using Jenks Natural Breaks - Population Density
 

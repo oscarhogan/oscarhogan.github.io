@@ -1,0 +1,12 @@
+# Ignore raw GIS files
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
+*.zip
+
+# Python / temporary files
+__pycache__/
+*.pyc
+.env
