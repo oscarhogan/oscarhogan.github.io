@@ -1,0 +1,79 @@
+  body {
+  font-family: "Courier New", Courier, monospace;
+  background: #f4f7e1;
+  margin: 0;
+  padding: 100px 200px 0 200px;
+}
+
+  body::-webkit-scrollbar {width: 8px;}
+  body::-webkit-scrollbar-track {background: #f4f7e1;}
+  body::-webkit-scrollbar-thumb {
+    background-color: #4B8B3B;
+    border-radius: 4px;
+    border: 2px solid #f4f7e1;
+  }
+  body::-webkit-scrollbar-thumb:hover {background-color: #02330C;}
+  body { scrollbar-width: thin; scrollbar-color: #4B8B3B #f4f7e1; }
+
+/* Text heirachy */
+h1 { font-size: 3rem; color: #02330C; }
+h2 { font-size: 1.5rem; color: #02330C; }
+h3 { font-size: 1rem; color: #02330C; }
+p  { font-size: 0.75rem; color: #02330C; }
+
+/* Banner Dimensions */
+.banner {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+/* Photo dimensions */
+.banner img {
+  height: 200px;
+  max-width: 450px;
+  object-fit: cover;
+}
+
+/* Projects Row */
+.project-row {
+  display: flex;
+  gap: 40px;
+  margin-top: 50px;
+}
+
+/* Individual project clickable */
+.project {
+  display: flex;          
+  gap: 20px;
+  flex: 1 1 45%;          
+  text-decoration: none;   
+  color: inherit;         
+}
+
+/* Project Image dimensions */
+.project img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
+
+.project-caption h3 { margin: 0 0 5px 0; font-size: 1rem; }
+.project-caption p { margin: 0; font-size: 0.75rem; }
+
+.project a {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start; 
+  text-decoration: none;   
+  color: inherit;          
+}
+
+.project a:hover .project-caption h3,
+.project a:hover .project-caption p {
+  color: #4B8B3B; 
+  transition: color 0.2s ease;
+  cursor: pointer; 
+}

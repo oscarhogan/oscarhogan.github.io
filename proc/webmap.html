@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Population vs Light Density</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Leaflet CSS/JS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<!-- Leaflet SideBySide -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-side-by-side/2.2.0/leaflet-side-by-side.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-side-by-side/2.2.0/leaflet-side-by-side.min.js"></script>
+
+<style>
+#map { width: 100%; height: 100vh; }
+.label {
+    font-size:16px;
+    font-weight:800;
+    color:darkblue;
+    text-shadow:0 0 3px white;
+}
+</style>
+</head>
+<body>
+<div id="map"></div>
+
+<script>
+// -------------------------
+// Initialize map
+// -------------------------
+var map = L.map('map').setView([51.462396, -0.066644], 13);
+
+// Base layer
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap contributors',
+    subdomains: 'abcd',
+    maxZoom: 19
+}).addTo(map);
+
+// -------------------------
+// Load GeoJSON data
+// -------------------------
+// Replace 'your_data_path' with the actual path if separate, or embed data
+var densityData = YOUR_POPULATION_GEOJSON; // e.g., load via fetch or paste JSON
+var lightData = YOUR_LIGHT_GEOJSON;       // same geometry, different property
+var outlineData = YOUR_OUTLINE_GEOJSON;
+
+// -------------------------
+// Define color functions
+// -------------------------
+function getDensityColor(d) {
+    // adjust breaks to match your Jenks or desired scale
+    return d > 1000 ? '#08519c' :
+           d > 500  ? '#3182bd' :
+           d > 200  ? '#6baed6' :
+           d > 100  ? '#bdd7e7' :
+                      '#eff3ff';
+}
+
+function getLightColor(d) {
+    return d > 100 ? '#08519c' :
+           d > 50  ? '#3182bd' :
+           d > 20  ? '#6baed6' :
+           d > 10  ? '#bdd7e7' :
+                     '#eff3ff';
+}
+
+// -------------------------
+// Create GeoJSON layers
+// -------------------------
+var densityLayer = L.geoJson(densityData, {
+    style: function(feature) {
+        return {
+            fillColor: getDensityColor(feature.properties.Density),
+            fillOpacity: 0.7,
+            weight: 0
+        };
+    }
+});
+
+var lightLayer = L.geoJson(lightData, {
+    style: function(feature) {
+        return {
+            fillColor: getLightColor(feature.properties.lightdensi),
+            fillOpacity: 0.7,
+            weight: 0
+        };
+    }
+});
+
+// Add outlines
+L.geoJson(outlineData, {
+    style: function(feature) { return {color:'skyblue', weight:2, fill:false}; }
+}).addTo(map);
+
+// -------------------------
+// Add borough labels
+// -------------------------
+var labels = [
+    // Example:
+    // {name:'Borough A', coords:[51.47, -0.06]}
+];
+labels.forEach(function(lbl){
+    L.marker(lbl.coords, {
+        icon: L.divIcon({className:'label', html: lbl.name})
+    }).addTo(map);
+});
+
+// -------------------------
+// Add side-by-side slider
+// -------------------------
+L.control.sideBySide(densityLayer, lightLayer).addTo(map);
+
+</script>
+</body>
+</html>
