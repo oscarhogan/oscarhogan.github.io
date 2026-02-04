@@ -8,7 +8,7 @@ setTimeout(function() {
   map.invalidateSize();
 }, 100);
 
-fetch('data/AreaOutline.geojson')
+fetch('data/AreaWithLightDensity.geojson')
   .then(response => response.json())
   .then(data => {
     // 1. Extract values from the property
