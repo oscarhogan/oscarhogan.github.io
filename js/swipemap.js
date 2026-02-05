@@ -8,9 +8,30 @@ setTimeout(function() {
   map.invalidateSize();
 }, 100);
 
+// Color function for choropleth
+function getColor(d) {
+    return d > 90652  ? '#BD0026' :
+           d > 46250  ? '#E31A1C' :
+           d > 25294  ? '#FC4E2A' :
+           d > 13085  ? '#FD8D3C' :
+           d > 305    ? '#FEB24C' :
+                        '#FFEDA0'; 
+
+// Style function for each feature
+function style(feature) {
+    return {
+        fillColor: getColor(feature.properties.Density), // Use your GeoJSON property
+        weight: 2,
+        opacity: 1,
+        color: 'white',
+        dashArray: '3',
+        fillOpacity: 0.7
+    };
+}
+
+// Fetch GeoJSON and add to map with style
 fetch('data/AreaWithLightDensity.geojson')
   .then(res => res.json())
-  .then(data => L.geoJson(data).addTo(map));
-
-
-
+  .then(data => {
+      L.geoJson(data, {style: style}).addTo(map);
+  });
