@@ -8,7 +8,9 @@ setTimeout(function() {
   map.invalidateSize();
 }, 100);
 
-L.geoJson("data/AreaWithLightDensity.geojson").addTo(map);
+fetch('data/AreaWithLightDensity.geojson')
+  .then(res => res.json())
+  .then(data => L.geoJson(data).addTo(map));
 
 
 
