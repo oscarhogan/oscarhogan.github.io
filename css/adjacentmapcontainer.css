@@ -1,0 +1,9 @@
+.maps-container {
+    display: flex;     
+    gap: 10px;          
+}
+
+.map {
+    height: 400px;      
+    flex: 1;            
+}

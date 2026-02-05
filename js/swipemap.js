@@ -11,7 +11,7 @@ setTimeout(function() {
 }, 100);
 
 // Color function for choropleth
-function getColor(d) {
+function getColorDensity(d) {
     return d > 90652  ? '#BD0026' :
            d > 46250  ? '#E31A1C' :
            d > 25294  ? '#FC4E2A' :
@@ -21,9 +21,9 @@ function getColor(d) {
 }
 
 // Style function for each feature
-function style(feature) {
+function styleDensity(feature) {
     return {
-        fillColor: getColor(feature.properties.Density), // Use your GeoJSON property
+        fillColor: getColorDensity(feature.properties.Density), // Use your GeoJSON property
         weight: 0.5,
         opacity: 1,
         color: 'white',
@@ -35,7 +35,7 @@ function style(feature) {
 fetch('data/AreaWithLightDensity.geojson')
   .then(res => res.json())
   .then(data => {
-      L.geoJson(data, {style: style}).addTo(map);
+      L.geoJson(data, {style: styleDensity}).addTo(map);
   });
 
 // Fetch labels GeoJSON and add permanent labels
@@ -75,7 +75,7 @@ setTimeout(function() {
 }, 100);
 
 // Color function for choropleth
-function getColor(d) {
+function getColorLightDensity(d) {
     return d > 6487  ? '#BD0026' :
            d > 3698  ? '#E31A1C' :
            d > 1630  ? '#FC4E2A' :
@@ -84,9 +84,9 @@ function getColor(d) {
                         '#FFEDA0'; 
 }
 
-function style(feature) {
+function styleLightDensity(feature) {
     return {
-        fillColor: getColor(feature.properties.lightdensi), // Use your GeoJSON property
+        fillColor: getColorLightDensity(feature.properties.lightdensi), // Use your GeoJSON property
         weight: 0.5,
         opacity: 1,
         color: 'white',
@@ -98,5 +98,5 @@ function style(feature) {
 fetch('data/AreaWithLightDensity.geojson')
   .then(res => res.json())
   .then(data => {
-      L.geoJson(data, {style: style}).addTo(map2);
+      L.geoJson(data, {style: styleLightDensity}).addTo(map2);
   });
