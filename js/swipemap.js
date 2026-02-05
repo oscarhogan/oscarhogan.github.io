@@ -38,29 +38,6 @@ fetch('data/AreaWithLightDensity.geojson')
       L.geoJson(data, {style: styleDensity}).addTo(map);
   });
 
-// Fetch labels GeoJSON and add permanent labels
-fetch('data/AreaLabels.geojson')
-  .then(res => res.json())
-  .then(data => {
-      L.geoJson(data, {
-          style: function() {
-              return { fillOpacity: 0, opacity: 0 }; // hide polygons
-          },
-          onEachFeature: function(feature, layer) {
-              // Get the centroid
-              var center = layer.getBounds().getCenter();
-
-              // Add permanent tooltip
-              L.marker(center, { opacity: 0 }) // hide marker
-               .bindTooltip(feature.properties.name, { // replace 'Name' with your label property
-                   permanent: true,
-                   direction: 'center',
-                   className: 'borough-label'
-               })
-               .addTo(map);
-          }
-      });
-  });
 
 // Map 2 - Light Density
 
