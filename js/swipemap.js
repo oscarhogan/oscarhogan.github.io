@@ -1,4 +1,6 @@
-var map = L.map('swipemap').setView([51.462405, -0.066630], 12);
+// Map 1 - Density
+
+var map = L.map('densitymap').setView([51.462405, -0.066630], 12);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; OpenStreetMap contributors'
@@ -36,3 +38,65 @@ fetch('data/AreaWithLightDensity.geojson')
       L.geoJson(data, {style: style}).addTo(map);
   });
 
+// Fetch labels GeoJSON and add permanent labels
+fetch('data/AreaLabels.geojson')
+  .then(res => res.json())
+  .then(data => {
+      L.geoJson(data, {
+          style: function() {
+              return { fillOpacity: 0, opacity: 0 }; // hide polygons
+          },
+          onEachFeature: function(feature, layer) {
+              // Get the centroid
+              var center = layer.getBounds().getCenter();
+
+              // Add permanent tooltip
+              L.marker(center, { opacity: 0 }) // hide marker
+               .bindTooltip(feature.properties.name, { // replace 'Name' with your label property
+                   permanent: true,
+                   direction: 'center',
+                   className: 'borough-label'
+               })
+               .addTo(map);
+          }
+      });
+  });
+
+// Map 2 - Light Density
+
+var map2 = L.map('lightdensitymap').setView([51.462405, -0.066630], 12);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map2);
+
+setTimeout(function() {
+  map2.invalidateSize();
+}, 100);
+
+// Color function for choropleth
+function getColor(d) {
+    return d > 6487  ? '#BD0026' :
+           d > 3698  ? '#E31A1C' :
+           d > 1630  ? '#FC4E2A' :
+           d > 961  ? '#FD8D3C' :
+           d > 495    ? '#FEB24C' :
+                        '#FFEDA0'; 
+}
+
+function style(feature) {
+    return {
+        fillColor: getColor(feature.properties.lightdensi), // Use your GeoJSON property
+        weight: 0.5,
+        opacity: 1,
+        color: 'white',
+        fillOpacity: 0.7
+    };
+}
+
+// Fetch GeoJSON and add to map with style
+fetch('data/AreaWithLightDensity.geojson')
+  .then(res => res.json())
+  .then(data => {
+      L.geoJson(data, {style: style}).addTo(map2);
+  });
