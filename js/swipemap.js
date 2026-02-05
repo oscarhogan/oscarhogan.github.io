@@ -16,7 +16,6 @@ function getColorDensity(d) {
            d > 46250  ? '#E31A1C' :
            d > 25294  ? '#FC4E2A' :
            d > 13085  ? '#FD8D3C' :
-           d > 305    ? '#FEB24C' :
                         '#FFEDA0'; 
 }
 
