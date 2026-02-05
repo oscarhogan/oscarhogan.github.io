@@ -16,15 +16,15 @@ function getColor(d) {
            d > 13085  ? '#FD8D3C' :
            d > 305    ? '#FEB24C' :
                         '#FFEDA0'; 
+}
 
 // Style function for each feature
 function style(feature) {
     return {
         fillColor: getColor(feature.properties.Density), // Use your GeoJSON property
-        weight: 2,
+        weight: 0.5,
         opacity: 1,
         color: 'white',
-        dashArray: '3',
         fillOpacity: 0.7
     };
 }
@@ -35,3 +35,4 @@ fetch('data/AreaWithLightDensity.geojson')
   .then(data => {
       L.geoJson(data, {style: style}).addTo(map);
   });
+
