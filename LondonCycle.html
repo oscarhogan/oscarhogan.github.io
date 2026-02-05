@@ -16,10 +16,16 @@
      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
      crossorigin=""/>
 
+<!--Label CSS-->
+<link rel="stylesheet" href="label.css">
+
 <!--Leaflet JS-->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
      crossorigin=""></script>
+
+<!-- Turf.js - for natural breaks -->
+<script src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
 
 </head>
 <body>
@@ -54,7 +60,7 @@
  <div class="container">
  <p> Understanding where cycleway investment is most prudent neccesitates an understanding of how and why people cycle, and 
     the barriers they face. While not all-encompasing, Multi-Criteria Evaluation (MCE) provides a framework to consider the role of 
-    different factors</p>
+    different factors.</p>
  <p> MCE weighs different input criteria on the basis of importance, assigning geographic areas a total value. In the case of cycleway planning, looking
     for locations which best satisify the demands of a diverse potential userbase, informs an inclusive network.</p>
  <p> An adjusted version of the Bicycle Levels of Service (BLoS) which is used to assess the quality of existing infrastructure was developed
@@ -65,6 +71,13 @@
 <div id="swipemap" class="map"></div>
 
 <h3> Network Analysis</h3>
+<div class="container">
+<p> Network Analysis is a method for evealuating the most favourable path between an origin-destination pair</p>
+
+
+
+
+</div>
 
 <script src="js/swipemap.js"></script>
 
