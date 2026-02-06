@@ -5,6 +5,6 @@
 
 .map {
     height: 300px;
-    aspect-ratio: 16 / 9;      
+    width: 400px;    
     flex: 1;            
 }
