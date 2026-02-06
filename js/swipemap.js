@@ -52,11 +52,10 @@ setTimeout(function() {
 
 // Color function for choropleth
 function getColorLightDensity(d) {
-    return d > 6487  ? '#BD0026' :
-           d > 3698  ? '#E31A1C' :
-           d > 1630  ? '#FC4E2A' :
-           d > 961  ? '#FD8D3C' :
-           d > 495    ? '#FEB24C' :
+    return d > 3699  ? '#BD0026' :
+           d > 1630  ? '#E31A1C' :
+           d > 961  ? '#FC4E2A' :
+           d > 495  ? '#FD8D3C' :
                         '#FFEDA0'; 
 }
 
