@@ -34,7 +34,7 @@
   
   <h1>Cycleway Planning</h1>
   <h2>Multi-Criteria Evaluation and Network Analysis</h2>
-  <p>Using GIS to inform more sustainable, equitable active travel infrastrcture. How can data-driven insights help government agencies reach their policy aspirations?</p>
+  <p>Using GIS to inform more sustainable, equitable active travel infrastucture. How can data-driven insights help government agencies reach their policy aspirations?</p>
 
     <div class="banner">
     <img src="photos/CS2.jpg" alt="Image 1">
@@ -48,7 +48,7 @@
   <p>The benefits of cycling are well established. Both on the individual; Disease risk reduction and
      higher life expectancy - as well as on society; reduced traffic fatilites and lower ambient air pollution.
      Many European cities use segregated cycleway infrastructure to improve the perception 
-    of safety around cycling, which is the biggest impedence to increasing uptake.</p>
+    of safety around cycling, which is the biggest impedance to increasing uptake.</p>
   <p>While London has made strides in creating a less hostile environment for cyclists, studies mark a
      divide between those that choose to cycle and those that do not. Demographic differences in tendency to cycle reflect an 
      environment where cycleway planning is often built upon existing usage patterns.</p> 
@@ -60,8 +60,8 @@
 
  <h3> Multi-Criteria Evaluation </h3>
  <div class="container">
- <p> Understanding where cycleway investment is most prudent neccesitates an understanding of how and why people cycle, and 
-    the barriers they face. While not all-encompasing, Multi-Criteria Evaluation (MCE) provides a framework to consider the role of 
+ <p> Understanding where cycleway investment is most prudent neccessitates an understanding of how and why people cycle, and 
+    the barriers they face. While not all-encompassing, Multi-Criteria Evaluation (MCE) provides a framework to consider the role of 
     different factors.</p>
  <p> MCE weighs different input criteria on the basis of importance, assigning geographic areas a total value. In the case of cycleway planning, looking
     for locations which best satisify the demands of a diverse potential userbase, informs an inclusive network.</p>
@@ -78,13 +78,14 @@
 <h3> Network Analysis</h3>
 
 <div class="container">
-<p> Network Analysis evaluates the most favourable path between an origin-destination point pair using network datasets i.e the relationship
-  between a series of pathways or roads to calculate the lowest cost path. In the context of equitable cycleway planning, each MCE attribute, either reduces or increases the 
-  cost of traversing a path segment, defining the attractiveness of a route.</p>
-<p>For example, the difference in height between points at the start and end of a road can be taken as a gradient value, which when attatched to the network dataset,
-  adds an impedence value which gives preference to routes with lower maximum gradients.</p>
-<p></p>
-
+<p> Pairing MCE with Network Analysis; a geospatial method which evaluates the most favourable path between an origin-destination point 
+  pair using a network dataset allows for the identification of corridors which could best promote inclusive cycling.</p>
+  <p>This involves attaching MCE attributes to the network dataset based on proximity, before being used as impedances, reflecting the 
+    impact of different factors the traversing cost of a path segment. For example, the difference in elevation between points at the start and end 
+    of a road are taken as the gradient value, which if exceeding a certain threshold adds traversal cost.</p>
+  <p>The route with the lowest accumulated cost between an origin and point pair is taken as the most favourable route.</p>
+  <p> To identify alligments which hold strong potential to increase cycling uptake, a BLoS informed algorithm consideing the below factors wasrun across
+     5000 randomly seeded point pairs. Road segments routed across at at least 1% of instances were raised as suitable, and those above 2% highly suitable.</p>
 </div>
 
 <script src="js/swipemap.js"></script>
