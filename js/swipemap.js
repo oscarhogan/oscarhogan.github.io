@@ -37,6 +37,17 @@ fetch('data/AreaWithLightDensity.geojson')
       L.geoJson(data, {style: styleDensity}).addTo(map);
   });
 
+// Title control for Map 1
+const Denstitle = L.control({ position: 'topright' });
+
+Denstitle.onAdd = function () {
+    const div = L.DomUtil.create('div', 'maptitle');
+    div.innerHTML = '<h4>Population Density</h4>';
+    return div;
+};
+
+Denstitle.addTo(map);
+
 
 // Map 2 - Light Density
 
@@ -75,3 +86,15 @@ fetch('data/AreaWithLightDensity.geojson')
   .then(data => {
       L.geoJson(data, {style: styleLightDensity}).addTo(map2);
   });
+
+// Title control for Map 2
+
+const Lighttitle = L.control({ position: 'topright' });
+
+Lighttitle.onAdd = function () {
+    const div = L.DomUtil.create('div', 'maptitle');
+    div.innerHTML = '<h4>Street Light Density</h4>';
+    return div;
+};
+
+Lighttitle.addTo(map2);
