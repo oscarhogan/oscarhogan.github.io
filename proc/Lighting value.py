@@ -2,7 +2,6 @@ import pandas as pd
 import geopandas as gpd
 import matplotlib.pyplot as plt
 import os
-import geopandas as gpd
 
 area = gpd.read_file("data/PopDensity.shp")
 lights = gpd.read_file("data/AllBoroLights.shp")
