@@ -4,3 +4,8 @@
   max-width: 45%;
   margin: 20px 0;  
 }
+
+.singlemap {
+  height: 400px;   
+  width: 100%;     
+}
