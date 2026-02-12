@@ -15,7 +15,7 @@ const styleNetwork = {
 fetch('data/Network.geojson')
   .then(res => res.json())
   .then(data => {
-      L.geoJson(data, {style: styleNetwork}).addTo(map);
+      L.geoJson(data, {style: styleNetwork}).addTo(map3);
   });
 
 // Title control for Map 1
