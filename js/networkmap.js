@@ -7,8 +7,8 @@
     setTimeout(function() { map3.invalidateSize(); }, 300);
 
     const styleNetwork = {
-        color: "#000000",  
-        weight: 2
+        color: "#284ca8",  
+        weight: 1
     };
 
     fetch('data/Network.geojson')
