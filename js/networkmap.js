@@ -1,11 +1,10 @@
-var map = L.map('networkmap').setView([51.462405, -0.066630], 12);
+var map3 = L.map('networkmap').setView([51.462405, -0.066630], 12);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; OpenStreetMap contributors'
-}).addTo(map);
-
+}).addTo(map3);
 setTimeout(function() {
-  map.invalidateSize();
+  map3.invalidateSize();
 }, 100);
 
 const styleNetwork = {
@@ -28,4 +27,4 @@ Networktitle.onAdd = function () {
     return div;
 };
 
-Networktitle.addTo(map);
+Networktitle.addTo(map3);
