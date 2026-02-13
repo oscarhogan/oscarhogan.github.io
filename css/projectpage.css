@@ -9,11 +9,11 @@
 h1 { font-size: 4rem; color: #02330C; }
 h2 { font-size: 2rem; color: #02330C; }
 h3 { font-size: 1.5rem; color: #02330C; }
-p  { font-size: 1.25rem; color: #023d0e; }
+p  { font-size: 1rem; color: #023d0e; }
 
 /*smaller paragreaph variant */
 p.small {
-  font-size: 1rem;
+  font-size: 0.75rem;
   color: #035b15;
 }
 
@@ -39,6 +39,7 @@ p.small {
 }
 
 .subcontainer {
-  max-width: 600px; 
-  padding-left: 0;  
+  max-width: 600px;   
+  padding-left: 0;    
 }
+
