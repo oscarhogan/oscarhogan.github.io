@@ -72,7 +72,7 @@
     on underepresented user groups.</p>
   <p> Literature raised several route factors, as disprotionality impacting underpresented groups like elderly, female and ethnic-minority cyclists. These include
     Street Lighting, Gradient, Intersection traversal, service access and cycle parking availability. These are in addition to a number of routeing metrics routinely 
-  used by transport planners to to inform network allignment</p>
+  used by transport planners to to inform network allignment.</p>
   <p> for example... </p>
   </div>
   <h3> Betweeness Centrality </h3>
@@ -82,21 +82,16 @@
   </p></div>
   <h3> Cycleway Contiguity </h3>
   <div class="container"></div>
-  <p></p></div>
+  <p> Describes how integral to the existing cycleway network a road segement is. If a segment is already part of the network a scaled cost reduction is calculated based on how
+    large the adjacent network is.
+  </p></div>
   <h3> Basket of Services </h3>
   <div class="container"></div>
-  <p></p></div>
+  <p>Basket of Services refers to the range and avaliability of different services that one needs in everyday life. Proximity to services like healthcare, education, employment and recreation 
+    inform a greater score, highlighting areas where cycleway investment could best facilitate activie travel across a range of trip types.
+  </p></div>
 
-  <div>
-
-  
-   
-
-  <p> An adjusted version of the Bicycle Levels of Service (BLoS) which is used to assess the quality of existing infrastructure was developed
-   to reflect the needs of user groups, underepresented among cyclists who may hold differing route priorities. For example older adults 
-   may value routes with lower maximum gradients whereas female cyclists may prioritise street lighting and visibility.</p>
-</div>
-
+<h3> Population Density and Street Lighting across South London</h3>
 <div class="maps-container">
   <div id="densitymap" class="map"></div>
   <div id="lightdensitymap" class="map"></div>
@@ -105,10 +100,9 @@
 <!--This works ^ Respect it-->
 
 <h3> Network Analysis</h3>
-
 <div class="container">
 <p> Network Analysis is a geospatial method which evaluates the most favourable path between an origin-destination point 
-  pair. Pairing this with an inclusivity-informed MCE with allows the identification ofcorridors which could best promote inclusive cycling.</p>
+  pair. Pairing this with an MCE with allows the identification ofcorridors which could best promote inclusive cycling.</p>
   <p>This is done by attaching MCE attributes to the network dataset based on proximity, using them as impedances, reflecting the 
     impact of different factors on the 'cost' of traversing a path segment. For example, the difference in elevation between points at the start and end 
     of a road are taken as the gradient value, which if exceeding a certain threshold is a barrier to cycling, increasing traversal cost.</p>
