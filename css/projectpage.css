@@ -6,10 +6,16 @@
 }
 
 /* Text heirachy */
-h1 { font-size: 3rem; color: #02330C; }
-h2 { font-size: 1.5rem; color: #02330C; }
-h3 { font-size: 1rem; color: #02330C; }
-p  { font-size: 0.75rem; color: #02330C; }
+h1 { font-size: 4rem; color: #02330C; }
+h2 { font-size: 2rem; color: #02330C; }
+h3 { font-size: 1.5rem; color: #02330C; }
+p  { font-size: 1.25rem; color: #023d0e; }
+
+/*smaller paragreaph variant */
+p.small {
+  font-size: 1rem;
+  color: #035b15;
+}
 
 /* Banner Dimensions */
 .banner {
