@@ -31,3 +31,8 @@ p  { font-size: 0.75rem; color: #02330C; }
   max-width: 800px; 
   padding-left: 0;  
 }
+
+.subcontainer {
+  max-width: 600px; 
+  padding-left: 0;  
+}
