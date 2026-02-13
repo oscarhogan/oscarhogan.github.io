@@ -58,14 +58,27 @@
 
  <h3> Multi-Criteria Evaluation </h3>
  <div class="container">
- <p> Understanding where cycleway investment is most prudent neccessitates an understanding of how and why people cycle, and 
+ <p> Understanding where cycleway investment is beneficial neccessitates an understanding of how and why people cycle, and 
     the barriers they face. While not all-encompassing, Multi-Criteria Evaluation (MCE) provides a framework to consider the role of 
     different factors.</p>
  <p> MCE weighs different input criteria on the basis of importance, assigning geographic areas a total value. In the case of cycleway planning, looking
-    for locations which best satisify the demands of a diverse potential userbase, informs an inclusive network.</p>
- <p> An adjusted version of the Bicycle Levels of Service (BLoS) which is used to assess the quality of existing infrastructure was developed
- to reflect the needs of user groups, underepresented among cyclists who may hold differing route priorities. For example older adults 
- may value routes with lower maximum gradients whereas female cyclists may prioritise street lighting and visibility.</p>
+    for locations which best satisify the demands of a diverse userbase, informs an inclusive network.</p>
+  </div>
+
+  <h3> Developing a case specific MCE using inclusivity orientated weighting and factors</h3>
+  <div class="container"></div>
+  <p> To inform route selection reflecting the needs of South Londons dievrse population, a range of environmental and demographic impedence factors were 
+    compiled into a modified BLOS informed MCE. Each factor was included and weighted based on current literature on progressive active travel planning, focusing
+    on underepresented user groups.</p>
+    <p> Key factors marked as disprotionality impacting</p>
+   
+
+
+  </p>
+
+  <p> An adjusted version of the Bicycle Levels of Service (BLoS) which is used to assess the quality of existing infrastructure was developed
+   to reflect the needs of user groups, underepresented among cyclists who may hold differing route priorities. For example older adults 
+   may value routes with lower maximum gradients whereas female cyclists may prioritise street lighting and visibility.</p>
 </div>
 
 <div class="maps-container">
@@ -78,14 +91,14 @@
 <h3> Network Analysis</h3>
 
 <div class="container">
-<p> Pairing MCE with Network Analysis; a geospatial method which evaluates the most favourable path between an origin-destination point 
-  pair using a network dataset allows for the identification of corridors which could best promote inclusive cycling.</p>
-  <p>This involves attaching MCE attributes to the network dataset based on proximity, before being used as impedances, reflecting the 
-    impact of different factors the traversing cost of a path segment. For example, the difference in elevation between points at the start and end 
-    of a road are taken as the gradient value, which if exceeding a certain threshold adds traversal cost.</p>
+<p> Network Analysis is a geospatial method which evaluates the most favourable path between an origin-destination point 
+  pair. Pairing this with an inclusivity-informed MCE with allows the identification ofcorridors which could best promote inclusive cycling.</p>
+  <p>This is done by attaching MCE attributes to the network dataset based on proximity, using them as impedances, reflecting the 
+    impact of different factors on the 'cost' of traversing a path segment. For example, the difference in elevation between points at the start and end 
+    of a road are taken as the gradient value, which if exceeding a certain threshold is a barrier to cycling, increasing traversal cost.</p>
   <p>The route with the lowest accumulated cost between an origin and point pair is taken as the most favourable route.</p>
-  <p> To identify alligments which hold strong potential to increase cycling uptake, a BLoS informed algorithm consideing the below factors wasrun across
-     5000 randomly seeded point pairs. Road segments routed across at at least 1% of instances were raised as suitable, and those above 2% highly suitable.</p>
+  <p> To identify alligments which hold strong potential to increase cycling uptake, a BLoS informed algorithm using weighted input factors
+     was run across 5000 random point pairs. Road segments routed across at at least 1% of instances were raised as suitable, and those above 2% highly suitable.</p>
 </div>
 
 <div id="networkmap" class="singlemap"></div>
