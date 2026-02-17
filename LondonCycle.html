@@ -110,15 +110,17 @@
     impact of different factors on the 'cost' of traversing a path segment. For example, the difference in elevation between points at the start and end 
     of a road are taken as the gradient value, which if exceeding a certain threshold is a barrier to cycling, increasing traversal cost.</p>
   <p>The route with the lowest accumulated cost between an origin and point pair is taken as the most favourable route.</p>
-  <p> To identify alligments which hold strong potential to increase cycling uptake, a BLoS informed algorithm using weighted input factors
-     was run across 5000 random point pairs. Road segments routed across at at least 1% of instances were raised as suitable, and those above 2% highly suitable.</p>
 </div>
 
 <div id="networkmap" class="singlemap"></div>
 
 <h3> High Priority Allignments</h3>
+<p> Viable cycleway allignments were identified using custom Python route-finding algorithm which uses the cumulative route cost to calculate the best route between a set of 5000
+  point-origin pairs.</p>
+<p> Road sections raised in at least 1% of instances were considered viable, and those above 2% highly suitable, returning a set of locations where cycleway infrastructure should be prioritised.</p>
 
 <h3> Discussion </h3>
+<p> Multi-Criteria Evaluation (MCE) informed network analysis identified a series of high-priority cycleway allignments within South London</p>
 
 
 <!--Map JS-->
