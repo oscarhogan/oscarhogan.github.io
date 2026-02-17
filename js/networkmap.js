@@ -8,7 +8,7 @@
 
     const styleNetwork = {
         color: "#284ca8",  
-        weight: 1
+        weight: 0.6
     };
 
     fetch('data/Network.geojson')
@@ -20,7 +20,7 @@
     const Networktitle = L.control({ position: 'topright' });
     Networktitle.onAdd = function () {
         const div = L.DomUtil.create('div', 'maptitle');
-        div.innerHTML = '<h4> South London Road/Pathway Network</h4>';
+        div.innerHTML = '<h4> South London Road Network</h4>';
         return div;
     };
     Networktitle.addTo(map3);

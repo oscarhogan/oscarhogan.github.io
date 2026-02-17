@@ -8,7 +8,7 @@
 /* Text heirachy */
 h1 { font-size: 4rem; color: #02330C; }
 h2 { font-size: 2rem; color: #02330C; }
-h3 { font-size: 1.5rem; color: #02330C; }
+h3 { font-size: 1.5rem; color: #02330C; margin: 0; }
 p  { font-size: 1rem; color: #023d0e; }
 
 /*smaller paragreaph variant */
