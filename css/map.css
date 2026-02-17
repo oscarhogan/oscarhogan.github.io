@@ -7,5 +7,6 @@
 
 .singlemap {
   height: 500px;   
-  max-width: 60%;   
+  max-width: 60%;
+  margin: 0 0 0 20px;   
 }
