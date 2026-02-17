@@ -8,7 +8,7 @@
 
     const styleNetwork = {
         color: "#284ca8",  
-        weight: 0.6
+        weight: 0.8
     };
 
     fetch('data/Network.geojson')
