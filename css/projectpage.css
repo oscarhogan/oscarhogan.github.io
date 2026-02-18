@@ -8,7 +8,7 @@
 /* Text heirachy */
 h1 { font-size: 4rem; color: #02330C; }
 h2 { font-size: 2rem; color: #02330C; }
-h3 { font-size: 1.5rem; color: #02330C; margin: 0; }
+h3 { font-size: 1.5rem; color: #02330C; margin-bottom: 5px; }
 p  { font-size: 1rem; color: #023d0e; }
 
 /*smaller paragreaph variant */
@@ -40,8 +40,18 @@ p.small {
 }
 
 .subcontainer {
-  max-width: 700px;   
+  display: flex;
+  align-items: flex-start;
+  max-width: 700px;
+  gap: 15px;   
   margin-top: 1px;
   margin-bottom: 1px;    
+}
+
+.subcontainer img {
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+  flex-shrink: 0;
 }
 
