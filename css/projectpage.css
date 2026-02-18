@@ -49,8 +49,8 @@ p.small {
 }
 
 .subcontainer img {
-  height: 200px;
-  width: 200px;
+  height: 100px;
+  width: 100px;
   object-fit: cover;
   flex-shrink: 0;
 }
