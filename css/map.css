@@ -2,11 +2,10 @@
   height: 400px;   
   width: 45%;     
   max-width: 45%;
-  margin: 5px 0 0 20px;  
 }
 
 .singlemap {
   height: 500px;   
   max-width: 60%;
-  margin: 50px 0 0 20px;   
+  margin-bottom: 30px;
 }
